@@ -7,6 +7,8 @@
         "@angular/http": "^5.2.10",
         "@angular/platform-browser": "^5.2.10",
         "@angular/platform-browser-dynamic": "^5.2.10",
+        "@material/top-app-bar": "^0.34.1",
+        "@material/typography": "^0.34.0",
         "@types/node": "^9.6.6",
         "core-js": "^2.5.5",
         "rxjs": "^5.5.10",

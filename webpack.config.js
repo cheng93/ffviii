@@ -9,11 +9,12 @@ module.exports = {
 
     entry: {
         polyfill: './polyfill.ts',
+        vendor: './vendor.scss',
         app: './main.ts'
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js', '.scss']
     },
 
     output: {
@@ -50,6 +51,7 @@ module.exports = {
                         loader: 'sass-loader',
 
                         options: {
+                            includePaths: [path.resolve('./node_modules')],
                             sourceMap: true
                         }
                     }
@@ -60,7 +62,7 @@ module.exports = {
 
     plugins: [
         new UglifyJSPlugin(),
-        new MiniCssExtractPlugin({ filename: 'style.css' }),
+        new MiniCssExtractPlugin({ filename: 'static/[name].[chunkhash].css' }),
         new HtmlWebpackPlugin({
             template: 'index.html'
         })
