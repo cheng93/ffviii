@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class HaggleAbility implements Ability {
     readonly ap: number | null = 150;
@@ -144,29 +144,32 @@ export class CardModAbility implements Ability {
     readonly name: string = 'Card Mod';
 }
 
-export class MenuAbilities {
-    static readonly Haggle: Ability = new HaggleAbility();
-    static readonly SellHigh: Ability = new SellHighAbility();
-    static readonly Familiar: Ability = new FamiliarAbility();
-    static readonly CallShop: Ability = new CallShopAbility();
-    static readonly JunkShop: Ability = new JunkShopAbility();
-    static readonly TMagRf: Ability = new TMagRfAbility();
-    static readonly IMagRf: Ability = new IMagRfAbility();
-    static readonly FMagRf: Ability = new FMagRfAbility();
-    static readonly LMagRf: Ability = new LMagRfAbility();
-    static readonly TimeMagRf: Ability = new TimeMagRfAbility();
-    static readonly StMagRf: Ability = new StMagRfAbility();
-    static readonly SuptMagRf: Ability = new SuptMagRfAbility();
-    static readonly ForbidMagRf: Ability = new ForbidMagRfAbility();
-    static readonly RecovMedRf: Ability = new RecovMedRfAbility();
-    static readonly StMedRf: Ability = new StMedRfAbility();
-    static readonly AmmoRf: Ability = new AmmoRfAbility();
-    static readonly ToolRf: Ability = new ToolRfAbility();
-    static readonly ForbidMedRf: Ability = new ForbidMedRfAbility();
-    static readonly GfRecovMedRf: Ability = new GfRecovMedRfAbility();
-    static readonly GfAblMedRf: Ability = new GfAblMedRfAbility();
-    static readonly MidMagRf: Ability = new MidMagRfAbility();
-    static readonly HighMagRf: Ability = new HighMagRfAbility();
-    static readonly MedLvUp: Ability = new MedLvUpAbility();
-    static readonly CardMod: Ability = new CardModAbility();
+class _MenuAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly Haggle: Ability = new HaggleAbility();
+    readonly SellHigh: Ability = new SellHighAbility();
+    readonly Familiar: Ability = new FamiliarAbility();
+    readonly CallShop: Ability = new CallShopAbility();
+    readonly JunkShop: Ability = new JunkShopAbility();
+    readonly TMagRf: Ability = new TMagRfAbility();
+    readonly IMagRf: Ability = new IMagRfAbility();
+    readonly FMagRf: Ability = new FMagRfAbility();
+    readonly LMagRf: Ability = new LMagRfAbility();
+    readonly TimeMagRf: Ability = new TimeMagRfAbility();
+    readonly StMagRf: Ability = new StMagRfAbility();
+    readonly SuptMagRf: Ability = new SuptMagRfAbility();
+    readonly ForbidMagRf: Ability = new ForbidMagRfAbility();
+    readonly RecovMedRf: Ability = new RecovMedRfAbility();
+    readonly StMedRf: Ability = new StMedRfAbility();
+    readonly AmmoRf: Ability = new AmmoRfAbility();
+    readonly ToolRf: Ability = new ToolRfAbility();
+    readonly ForbidMedRf: Ability = new ForbidMedRfAbility();
+    readonly GfRecovMedRf: Ability = new GfRecovMedRfAbility();
+    readonly GfAblMedRf: Ability = new GfAblMedRfAbility();
+    readonly MidMagRf: Ability = new MidMagRfAbility();
+    readonly HighMagRf: Ability = new HighMagRfAbility();
+    readonly MedLvUp: Ability = new MedLvUpAbility();
+    readonly CardMod: Ability = new CardModAbility();
 }
+
+export const MenuAbilities = new _MenuAbilities();

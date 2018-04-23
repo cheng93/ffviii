@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class HpPlus20Ability implements Ability {
     readonly ap: number | null = 60;
@@ -234,44 +234,47 @@ export class RibbonAbility implements Ability {
     readonly name: string = 'Ribbon';
 }
 
-export class CharacterAbilities {
-    static readonly HpPlus20: Ability = new HpPlus20Ability();
-    static readonly HpPlus40: Ability = new HpPlus40Ability();
-    static readonly HpPlus80: Ability = new HpPlus80Ability();
-    static readonly StrPlus20: Ability = new StrPlus20Ability();
-    static readonly StrPlus40: Ability = new StrPlus40Ability();
-    static readonly StrPlus60: Ability = new StrPlus60Ability();
-    static readonly VitPlus20: Ability = new VitPlus20Ability();
-    static readonly VitPlus40: Ability = new VitPlus40Ability();
-    static readonly VitPlus60: Ability = new VitPlus60Ability();
-    static readonly MagPlus20: Ability = new MagPlus20Ability();
-    static readonly MagPlus40: Ability = new MagPlus40Ability();
-    static readonly MagPlus60: Ability = new MagPlus60Ability();
-    static readonly SprPlus20: Ability = new SprPlus20Ability();
-    static readonly SprPlus40: Ability = new SprPlus40Ability();
-    static readonly SprPlus60: Ability = new SprPlus60Ability();
-    static readonly SpdPlus20: Ability = new SpdPlus20Ability();
-    static readonly SpdPlus40: Ability = new SpdPlus40Ability();
-    static readonly EvaPlus30: Ability = new EvaPlus30Ability();
-    static readonly LuckPlus50: Ability = new LuckPlus50Ability();
-    static readonly Mug: Ability = new MugAbility();
-    static readonly MedData: Ability = new MedDataAbility();
-    static readonly Counter: Ability = new CounterAbility();
-    static readonly ReturnDamage: Ability = new ReturnDamageAbility();
-    static readonly Cover: Ability = new CoverAbility();
-    static readonly Initiative: Ability = new InitiativeAbility();
-    static readonly MoveHpUp: Ability = new MoveHpUpAbility();
-    static readonly HpBonus: Ability = new HpBonusAbility();
-    static readonly StrBonus: Ability = new StrBonusAbility();
-    static readonly VitBonus: Ability = new VitBonusAbility();
-    static readonly MagBonus: Ability = new MagBonusAbility();
-    static readonly SprBonus: Ability = new SprBonusAbility();
-    static readonly AutoProtect: Ability = new AutoProtectAbility();
-    static readonly AutoShell: Ability = new AutoShellAbility();
-    static readonly AutoReflect: Ability = new AutoReflectAbility();
-    static readonly AutoHaste: Ability = new AutoHasteAbility();
-    static readonly AutoPotion: Ability = new AutoPotionAbility();
-    static readonly ExpendX2: Ability = new ExpendX2Ability();
-    static readonly ExpendX3: Ability = new ExpendX3Ability();
-    static readonly Ribbon: Ability = new RibbonAbility();
+class _CharacterAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly HpPlus20: Ability = new HpPlus20Ability();
+    readonly HpPlus40: Ability = new HpPlus40Ability();
+    readonly HpPlus80: Ability = new HpPlus80Ability();
+    readonly StrPlus20: Ability = new StrPlus20Ability();
+    readonly StrPlus40: Ability = new StrPlus40Ability();
+    readonly StrPlus60: Ability = new StrPlus60Ability();
+    readonly VitPlus20: Ability = new VitPlus20Ability();
+    readonly VitPlus40: Ability = new VitPlus40Ability();
+    readonly VitPlus60: Ability = new VitPlus60Ability();
+    readonly MagPlus20: Ability = new MagPlus20Ability();
+    readonly MagPlus40: Ability = new MagPlus40Ability();
+    readonly MagPlus60: Ability = new MagPlus60Ability();
+    readonly SprPlus20: Ability = new SprPlus20Ability();
+    readonly SprPlus40: Ability = new SprPlus40Ability();
+    readonly SprPlus60: Ability = new SprPlus60Ability();
+    readonly SpdPlus20: Ability = new SpdPlus20Ability();
+    readonly SpdPlus40: Ability = new SpdPlus40Ability();
+    readonly EvaPlus30: Ability = new EvaPlus30Ability();
+    readonly LuckPlus50: Ability = new LuckPlus50Ability();
+    readonly Mug: Ability = new MugAbility();
+    readonly MedData: Ability = new MedDataAbility();
+    readonly Counter: Ability = new CounterAbility();
+    readonly ReturnDamage: Ability = new ReturnDamageAbility();
+    readonly Cover: Ability = new CoverAbility();
+    readonly Initiative: Ability = new InitiativeAbility();
+    readonly MoveHpUp: Ability = new MoveHpUpAbility();
+    readonly HpBonus: Ability = new HpBonusAbility();
+    readonly StrBonus: Ability = new StrBonusAbility();
+    readonly VitBonus: Ability = new VitBonusAbility();
+    readonly MagBonus: Ability = new MagBonusAbility();
+    readonly SprBonus: Ability = new SprBonusAbility();
+    readonly AutoProtect: Ability = new AutoProtectAbility();
+    readonly AutoShell: Ability = new AutoShellAbility();
+    readonly AutoReflect: Ability = new AutoReflectAbility();
+    readonly AutoHaste: Ability = new AutoHasteAbility();
+    readonly AutoPotion: Ability = new AutoPotionAbility();
+    readonly ExpendX2: Ability = new ExpendX2Ability();
+    readonly ExpendX3: Ability = new ExpendX3Ability();
+    readonly Ribbon: Ability = new RibbonAbility();
 }
+
+export const CharacterAbilities = new _CharacterAbilities();

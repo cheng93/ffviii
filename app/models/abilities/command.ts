@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class MagicAbility implements Ability {
     readonly ap: number | null = null;
@@ -108,23 +108,26 @@ export class MiniMogAbility implements Ability {
     readonly name: string = 'MiniMog';
 }
 
-export class CommandAbilities {
-    static readonly Magic = new MagicAbility();
-    static readonly Gf = new GfAbility();
-    static readonly Draw = new DrawAbility();
-    static readonly Item = new ItemAbility();
-    static readonly Card = new CardAbility();
-    static readonly Doom = new DoomAbility();
-    static readonly MadRush = new MadRushAbility();
-    static readonly Treatment = new TreatmentAbility();
-    static readonly Defend = new DefendAbility();
-    static readonly Darkside = new DarksideAbility();
-    static readonly Recover = new RecoverAbility();
-    static readonly Absorb = new AbsorbAbility();
-    static readonly Revive = new ReviveAbility();
-    static readonly LvDown = new LvDownAbility();
-    static readonly LvUp = new LvUpAbility();
-    static readonly Kamikaze = new KamikazeAbility();
-    static readonly Devour = new DevourAbility();
-    static readonly MiniMog = new MiniMogAbility();
+class _CommandAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly Magic = new MagicAbility();
+    readonly Gf = new GfAbility();
+    readonly Draw = new DrawAbility();
+    readonly Item = new ItemAbility();
+    readonly Card = new CardAbility();
+    readonly Doom = new DoomAbility();
+    readonly MadRush = new MadRushAbility();
+    readonly Treatment = new TreatmentAbility();
+    readonly Defend = new DefendAbility();
+    readonly Darkside = new DarksideAbility();
+    readonly Recover = new RecoverAbility();
+    readonly Absorb = new AbsorbAbility();
+    readonly Revive = new ReviveAbility();
+    readonly LvDown = new LvDownAbility();
+    readonly LvUp = new LvUpAbility();
+    readonly Kamikaze = new KamikazeAbility();
+    readonly Devour = new DevourAbility();
+    readonly MiniMog = new MiniMogAbility();
 }
+
+export const CommandAbilities = new _CommandAbilities();

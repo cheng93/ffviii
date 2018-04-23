@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class BoostAbility implements Ability {
     readonly ap: number | null = 10;
@@ -54,14 +54,17 @@ export class SumMagPlus40Ability implements Ability {
     readonly name: string = 'SumMag+40%';
 }
 
-export class GuardianForceAbilities {
-    static readonly Boost: Ability = new BoostAbility();
-    static readonly GfHpPlus10: Ability = new GfHpPlus10Ability();
-    static readonly GfHpPlus20: Ability = new GfHpPlus20Ability();
-    static readonly GfHpPlus30: Ability = new GfHpPlus30Ability();
-    static readonly GfHpPlus40: Ability = new GfHpPlus40Ability();
-    static readonly SumMagPlus10: Ability = new SumMagPlus10Ability();
-    static readonly SumMagPlus20: Ability = new SumMagPlus20Ability();
-    static readonly SumMagPlus30: Ability = new SumMagPlus30Ability();
-    static readonly SumMagPlus40: Ability = new GfHpPlus40Ability();
+class _GuardianForceAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly Boost: Ability = new BoostAbility();
+    readonly GfHpPlus10: Ability = new GfHpPlus10Ability();
+    readonly GfHpPlus20: Ability = new GfHpPlus20Ability();
+    readonly GfHpPlus30: Ability = new GfHpPlus30Ability();
+    readonly GfHpPlus40: Ability = new GfHpPlus40Ability();
+    readonly SumMagPlus10: Ability = new SumMagPlus10Ability();
+    readonly SumMagPlus20: Ability = new SumMagPlus20Ability();
+    readonly SumMagPlus30: Ability = new SumMagPlus30Ability();
+    readonly SumMagPlus40: Ability = new GfHpPlus40Ability();
 }
+
+export const GuardianForceAbilities = new _GuardianForceAbilities();

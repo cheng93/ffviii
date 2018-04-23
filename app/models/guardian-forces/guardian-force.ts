@@ -22,21 +22,24 @@ export interface GuardianForce {
     name: string;
 }
 
-export class AllGuardianForces {
-    static readonly Quezacotl = new QuezacotlGuardianForce();
-    static readonly Shiva = new ShivaGuardianForce();
-    static readonly Ifrit = new IfritGuardianForce();
-    static readonly Siren = new SirenGuardianForce();
-    static readonly Brothers = new BrothersGuardianForce();
-    static readonly Diablos = new DiablosGuardianForce();
-    static readonly Carbuncle = new CarbuncleGuardianForce();
-    static readonly Leviathan = new LeviathanGuardianForce();
-    static readonly Pandemona = new PandemonaGuardianForce();
-    static readonly Cerberus = new CerberusGuardianForce();
-    static readonly Alexander = new AlexanderGuardianForce();
-    static readonly Doomtrain = new DoomtrainGuardianForce();
-    static readonly Bahamut = new BahamutGuardianForce();
-    static readonly Cactuar = new CactuarGuardianForce();
-    static readonly Tonberry = new TonberryGuardianForce();
-    static readonly Eden = new EdenGuardianForce();
+class _AllGuardianForces {
+    [key: string]: GuardianForce;
+    readonly Quezacotl: GuardianForce = new QuezacotlGuardianForce();
+    readonly Shiva: GuardianForce = new ShivaGuardianForce();
+    readonly Ifrit: GuardianForce = new IfritGuardianForce();
+    readonly Siren: GuardianForce = new SirenGuardianForce();
+    readonly Brothers: GuardianForce = new BrothersGuardianForce();
+    readonly Diablos: GuardianForce = new DiablosGuardianForce();
+    readonly Carbuncle: GuardianForce = new CarbuncleGuardianForce();
+    readonly Leviathan: GuardianForce = new LeviathanGuardianForce();
+    readonly Pandemona: GuardianForce = new PandemonaGuardianForce();
+    readonly Cerberus: GuardianForce = new CerberusGuardianForce();
+    readonly Alexander: GuardianForce = new AlexanderGuardianForce();
+    readonly Doomtrain: GuardianForce = new DoomtrainGuardianForce();
+    readonly Bahamut: GuardianForce = new BahamutGuardianForce();
+    readonly Cactuar: GuardianForce = new CactuarGuardianForce();
+    readonly Tonberry: GuardianForce = new TonberryGuardianForce();
+    readonly Eden: GuardianForce = new EdenGuardianForce();
 }
+
+export const AllGuardianForces = new _AllGuardianForces();

@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class AlertAbility implements Ability {
     readonly ap: number | null = 200;
@@ -30,10 +30,13 @@ export class RareItemAbility implements Ability {
     readonly name: string = 'Rare Item';
 }
 
-export class PartyAbilities {
-    static readonly Alert = new AlertAbility();
-    static readonly MoveFind = new MoveFindAbility();
-    static readonly EncHalf = new EncHalfAbility();
-    static readonly EncNone = new EncNoneAbility();
-    static readonly RareItem = new RareItemAbility();
+class _PartyAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly Alert: Ability = new AlertAbility();
+    readonly MoveFind: Ability = new MoveFindAbility();
+    readonly EncHalf: Ability = new EncHalfAbility();
+    readonly EncNone: Ability = new EncNoneAbility();
+    readonly RareItem: Ability = new RareItemAbility();
 }
+
+export const PartyAbilities = new _PartyAbilities();

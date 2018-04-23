@@ -11,11 +11,18 @@ export interface Ability {
     name: string;
 }
 
-export class AllAbilities {
-    static readonly Character = CharacterAbilities;
-    static readonly Command = CommandAbilities;
-    static readonly GuardianForce = GuardianForceAbilities;
-    static readonly Junction = JunctionAbilities;
-    static readonly Menu = MenuAbilities;
-    static readonly Party = PartyAbilities;
+export interface AbilityMap {
+    [key: string]: AbilityMap | Ability;
 }
+
+class _AllAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly Character = CharacterAbilities;
+    readonly Command = CommandAbilities;
+    readonly GuardianForce = GuardianForceAbilities;
+    readonly Junction = JunctionAbilities;
+    readonly Menu = MenuAbilities;
+    readonly Party = PartyAbilities;
+}
+
+export const AllAbilities = new _AllAbilities();

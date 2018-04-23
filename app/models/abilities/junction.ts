@@ -1,4 +1,4 @@
-import { Ability } from './ability';
+import { Ability, AbilityMap } from './ability';
 
 export class HpJAbility implements Ability {
     readonly ap: number | null = 50;
@@ -114,24 +114,27 @@ export class AbilityX4Ability implements Ability {
     readonly name: string = 'Ability x4';
 }
 
-export class JunctionAbilities {
-    static readonly HpJ: Ability = new HpJAbility();
-    static readonly StrJ: Ability = new StrJAbility();
-    static readonly VitJ: Ability = new VitJAbility();
-    static readonly MagJ: Ability = new MagJAbility();
-    static readonly SprJ: Ability = new SprJAbility();
-    static readonly SpdJ: Ability = new SpdJAbility();
-    static readonly HitJ: Ability = new HitJAbility();
-    static readonly EvaJ: Ability = new EvaJAbility();
-    static readonly LuckJ: Ability = new LuckJAbility();
-    static readonly ElemAtkJ: Ability = new ElemAtkJAbility();
-    static readonly ElemDefJ: Ability = new ElemDefJAbility();
-    static readonly ElemDefJx2: Ability = new ElemDefJx2Ability();
-    static readonly ElemDefJx4: Ability = new ElemDefJx4Ability();
-    static readonly StAtkJ: Ability = new StAtkJAbility();
-    static readonly StDefJ: Ability = new StDefJAbility();
-    static readonly StDefJx2: Ability = new StDefJx2Ability();
-    static readonly StDefJx4: Ability = new StDefJx4Ability();
-    static readonly AbilityX3: Ability = new AbilityX3Ability();
-    static readonly AbilityX4: Ability = new AbilityX4Ability();
+class _JunctionAbilities implements AbilityMap {
+    [key: string]: AbilityMap | Ability;
+    readonly HpJ: Ability = new HpJAbility();
+    readonly StrJ: Ability = new StrJAbility();
+    readonly VitJ: Ability = new VitJAbility();
+    readonly MagJ: Ability = new MagJAbility();
+    readonly SprJ: Ability = new SprJAbility();
+    readonly SpdJ: Ability = new SpdJAbility();
+    readonly HitJ: Ability = new HitJAbility();
+    readonly EvaJ: Ability = new EvaJAbility();
+    readonly LuckJ: Ability = new LuckJAbility();
+    readonly ElemAtkJ: Ability = new ElemAtkJAbility();
+    readonly ElemDefJ: Ability = new ElemDefJAbility();
+    readonly ElemDefJx2: Ability = new ElemDefJx2Ability();
+    readonly ElemDefJx4: Ability = new ElemDefJx4Ability();
+    readonly StAtkJ: Ability = new StAtkJAbility();
+    readonly StDefJ: Ability = new StDefJAbility();
+    readonly StDefJx2: Ability = new StDefJx2Ability();
+    readonly StDefJx4: Ability = new StDefJx4Ability();
+    readonly AbilityX3: Ability = new AbilityX3Ability();
+    readonly AbilityX4: Ability = new AbilityX4Ability();
 }
+
+export const JunctionAbilities = new _JunctionAbilities();
