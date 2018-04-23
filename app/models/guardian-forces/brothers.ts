@@ -1,5 +1,5 @@
 import { GuardianForce } from './guardian-force';
-import { Ability, AllAbilities } from '../abilities/ability';
+import { Ability, AllAbilities } from '../abilities';
 
 export class BrothersGuardianForce implements GuardianForce {
     constructor() {

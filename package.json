@@ -37,6 +37,6 @@
     "scripts": {
         "build": "yarn run clean && webpack",
         "clean": "rimraf .dist",
-        "serve": "webpack-dev-server"
+        "serve": "webpack-dev-server --mode development"
     }
 }

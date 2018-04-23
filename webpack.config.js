@@ -67,6 +67,7 @@ module.exports = {
             template: 'index.html'
         })
     ],
+
     mode: 'production',
 
     optimization: {
