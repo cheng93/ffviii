@@ -1,8 +1,15 @@
 <section>
-    <div *ngFor="let gf of guardianForces">
+    <div class="guardian-force--row"
+        *ngFor="let gf of guardianForces">
         <label>
             {{gf.name}}
-            <input type="text">
         </label>
+        <select>
+            <option></option>
+            <option *ngFor="let character of characters" 
+                value="character.name">
+                {{character.name}}
+            </option>
+        </select>
     </div>
 </section>

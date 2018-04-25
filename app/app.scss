@@ -1,3 +1,38 @@
+@import './_mixin';
+
 body {
     margin: 0;
+}
+
+.page {
+    display: grid;
+
+    @include tablet {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'gf gf gf gf gf gf gf gf';
+        margin: 16px 48px;
+    }
+
+    @include mobile-l {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 'gf gf gf gf';
+    }
+
+    @include mobile-m {
+        margin: 16px 32px;
+    }
+
+    @include mobile-s {
+        margin: 16px;
+    }
+}
+
+.guardian-force {
+    grid-area: gf;
+
+    & .guardian-force--row {
+        display: flex;
+        justify-content: space-between;
+        margin: 12px 0;
+    }
 }
