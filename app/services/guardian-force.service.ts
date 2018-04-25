@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { GuardianForce, AllGuardianForces } from '../models/guardian-forces';
 
 @Injectable()
 export class GuardianForceService {
-    getAll(): Observable<GuardianForce[]> {
-        return of(
+    getAll(): BehaviorSubject<GuardianForce[]> {
+        return new BehaviorSubject(
             Object.keys(AllGuardianForces).map(x => AllGuardianForces[x])
         );
     }
