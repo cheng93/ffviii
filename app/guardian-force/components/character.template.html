@@ -1,2 +1,17 @@
 <div>{{character.name}}</div>
-<div *ngFor="let ability of abilities">{{ability}}</div>
+<abilities [title]="'Junction'"
+    [abilities]="abilities"
+    [allAbilities]="junctionAbilities">
+</abilities>
+<abilities [title]="'Command'"
+    [abilities]="abilities"
+    [allAbilities]="commandAbilities">
+</abilities>
+<abilities [title]="'Character'"
+    [abilities]="abilities"
+    [allAbilities]="characterAbilities">
+</abilities>
+<abilities [title]="'Party'"
+    [abilities]="abilities"
+    [allAbilities]="partyAbilities">
+</abilities>
