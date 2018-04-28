@@ -28,4 +28,6 @@ export class GuardianForceSectionComponent {
 
         this.store.dispatch(action);
     }
+
+    ghost: Array<number> = [...Array(8).keys()];
 }

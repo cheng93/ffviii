@@ -4,3 +4,5 @@
     [selected]="(selectState$ | async)[gf.name]"
     (selectChange)="onChange($event, gf.name)">
 </guardian-force>
+<div *ngFor="let x of ghost" class="guardian-force--row" [ngClass]="'guardian-force--ghost-'+x">
+</div>

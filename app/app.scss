@@ -4,35 +4,82 @@ body {
     margin: 0;
 }
 
-.page {
-    display: grid;
-
-    @include tablet {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 'gf gf gf gf gf gf gf gf';
-        margin: 16px 48px;
-    }
-
-    @include mobile-l {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 'gf gf gf gf';
-    }
-
-    @include mobile-m {
-        margin: 16px 32px;
-    }
-
-    @include mobile-s {
-        margin: 16px;
-    }
-}
-
 .guardian-force {
-    grid-area: gf;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 24px;
 
     & .guardian-force--row {
         display: flex;
+        flex-grow: 1;
         justify-content: space-between;
-        margin: 12px 0;
+        min-width: 180px;
+        margin: 12px;
+    }
+    & .guardian-force--ghost-0,
+    .guardian-force--ghost-1,
+    .guardian-force--ghost-2,
+    .guardian-force--ghost-3,
+    .guardian-force--ghost-4,
+    .guardian-force--ghost-5,
+    .guardian-force--ghost-6,
+    .guardian-force--ghost-7 {
+        display: none;
+    }
+
+    @media (min-width: 660px) {
+        .guardian-force--ghost-0,
+        .guardian-force--ghost-1 {
+            display: inherit;
+        }
+    }
+
+    @media (min-width: 1068px) {
+        .guardian-force--ghost-2,
+        .guardian-force--ghost-3 {
+            display: inherit;
+        }
+    }
+
+    @media (min-width: 1476px) {
+        .guardian-force--ghost-4 {
+            display: inherit;
+        }
+    }
+
+    @media (min-width: 2292px) {
+        .guardian-force--ghost-5 {
+            display: inherit;
+        }
+    }
+
+    @media (min-width: 2496px) {
+        .guardian-force--ghost-6,
+        .guardian-force--ghost-7 {
+            display: inherit;
+        }
+    }
+
+    @media (min-width: 864px) and (max-width: 1067px),
+        (min-width: 1680px) and (max-width: 1883px) {
+        .guardian-force--ghost-0,
+        .guardian-force--ghost-1 {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1272px) and (max-width: 1475px),
+        (min-width: 1680px) and (max-width: 2087px) {
+        .guardian-force--ghost-2,
+        .guardian-force--ghost-3 {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1680px) and (max-width: 2291px) {
+        .guardian-force--ghost-4 {
+            display: none;
+        }
     }
 }
