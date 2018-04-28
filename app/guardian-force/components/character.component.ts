@@ -27,4 +27,23 @@ export class CharacterComponent {
         x => x.name
     );
     partyAbilities: string[] = Object.values(PartyAbilities).map(x => x.name);
+
+    transformed: Array<any> = [
+        {
+            title: 'Junction',
+            allAbilities: this.junctionAbilities
+        },
+        {
+            title: 'Command',
+            allAbilities: this.commandAbilities
+        },
+        {
+            title: 'Character',
+            allAbilities: this.characterAbilities
+        },
+        {
+            title: 'Party',
+            allAbilities: this.partyAbilities
+        }
+    ];
 }

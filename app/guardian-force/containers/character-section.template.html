@@ -1,4 +1,5 @@
-<character *ngFor="let character of characters" 
+<character class="character--row"
+    *ngFor="let character of characters" 
     [character]="character"
     [abilities]="(abilities$ | async)[character.name]">
 </character>

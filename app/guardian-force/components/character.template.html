@@ -1,17 +1,7 @@
-<div>{{character.name}}</div>
-<abilities [title]="'Junction'"
+<div class="character--name">{{character.name}}</div>
+<abilities class="ability"
+    *ngFor="let ability of transformed"
+    [title]="ability.title"
     [abilities]="abilities"
-    [allAbilities]="junctionAbilities">
-</abilities>
-<abilities [title]="'Command'"
-    [abilities]="abilities"
-    [allAbilities]="commandAbilities">
-</abilities>
-<abilities [title]="'Character'"
-    [abilities]="abilities"
-    [allAbilities]="characterAbilities">
-</abilities>
-<abilities [title]="'Party'"
-    [abilities]="abilities"
-    [allAbilities]="partyAbilities">
+    [allAbilities]="ability.allAbilities">
 </abilities>

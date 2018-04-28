@@ -1,6 +1,10 @@
-<div *ngIf="filtered.length > 0">
-    <div>{{title}}</div>
-    <div>
-        <div *ngFor="let ability of filtered">{{ability}}</div>
+<div class="ability--row" 
+    *ngIf="filtered.length > 0">
+    <div class="ability--title">{{title}}</div>
+    <div class="ability--list">
+        <div class="ability--item" 
+            *ngFor="let ability of filtered">
+            {{ability}}
+        </div>
     </div>
 </div>

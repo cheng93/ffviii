@@ -7,14 +7,12 @@ body {
 .guardian-force {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin: 24px;
 
     & .guardian-force--row {
         display: flex;
-        flex-grow: 1;
+        flex: 1 1 180px;
         justify-content: space-between;
-        min-width: 180px;
         margin: 12px;
     }
     & .guardian-force--ghost-0,
@@ -81,5 +79,60 @@ body {
         .guardian-force--ghost-4 {
             display: none;
         }
+    }
+}
+
+.character {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 24px;
+
+    & .character--row {
+        margin: 12px;
+        flex: 1 1 180px;
+    }
+
+    @media (min-width: 863px) {
+        .character--row {
+            flex: 1 1 247px;
+        }
+    }
+
+    @media (min-width: 1132px) {
+        .character--row {
+            flex: 1 1 337px;
+        }
+    }
+
+    @media (min-width: 1272px) {
+        .character--row {
+            flex: 1 1 180px;
+        }
+    }
+
+    & .character--name {
+        margin-bottom: 12px;
+    }
+}
+
+.ability {
+    & .ability--row {
+        margin: 12px 0;
+    }
+
+    & .ability--title {
+        margin: 6px 0;
+    }
+
+    & .ability--list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 6px 0;
+    }
+
+    & .ability--item {
+        margin-right: 12px;
     }
 }
