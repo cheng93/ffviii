@@ -55,7 +55,7 @@ export class SumMagPlus40Ability implements Ability {
 }
 
 class _GuardianForceAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly Boost: Ability = new BoostAbility();
     readonly GfHpPlus10: Ability = new GfHpPlus10Ability();
     readonly GfHpPlus20: Ability = new GfHpPlus20Ability();

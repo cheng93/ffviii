@@ -145,7 +145,7 @@ export class CardModAbility implements Ability {
 }
 
 class _MenuAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly Haggle: Ability = new HaggleAbility();
     readonly SellHigh: Ability = new SellHighAbility();
     readonly Familiar: Ability = new FamiliarAbility();

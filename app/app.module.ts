@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CoreModule } from './core/core.module';
+import { GuardianForceModule } from './guardian-force/guardian-force.module';
 import { AppComponent } from './app.component';
-import { GuardianForceComponent } from './components/guardian-force/guardian-force.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { CharacterService } from './services/character.service';
-import { GuardianForceService } from './services/guardian-force.service';
+import { reducers, metaReducers } from './app.reducers';
 import './app.scss';
 
 @NgModule({
-    imports: [BrowserModule, FormsModule],
-    declarations: [AppComponent, GuardianForceComponent, ToolbarComponent],
-    providers: [CharacterService, GuardianForceService],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        StoreModule.forRoot(reducers, { metaReducers }),
+        StoreDevtoolsModule.instrument({
+            name: 'NgRx Book Store DevTools'
+        }),
+        CoreModule,
+        GuardianForceModule
+    ],
+    declarations: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

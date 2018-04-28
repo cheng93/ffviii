@@ -235,7 +235,7 @@ export class RibbonAbility implements Ability {
 }
 
 class _CharacterAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly HpPlus20: Ability = new HpPlus20Ability();
     readonly HpPlus40: Ability = new HpPlus40Ability();
     readonly HpPlus80: Ability = new HpPlus80Ability();

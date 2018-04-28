@@ -115,7 +115,7 @@ export class AbilityX4Ability implements Ability {
 }
 
 class _JunctionAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly HpJ: Ability = new HpJAbility();
     readonly StrJ: Ability = new StrJAbility();
     readonly VitJ: Ability = new VitJAbility();

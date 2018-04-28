@@ -31,7 +31,7 @@ export class RareItemAbility implements Ability {
 }
 
 class _PartyAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly Alert: Ability = new AlertAbility();
     readonly MoveFind: Ability = new MoveFindAbility();
     readonly EncHalf: Ability = new EncHalfAbility();

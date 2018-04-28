@@ -109,7 +109,7 @@ export class MiniMogAbility implements Ability {
 }
 
 class _CommandAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: Ability;
     readonly Magic = new MagicAbility();
     readonly Gf = new GfAbility();
     readonly Draw = new DrawAbility();
