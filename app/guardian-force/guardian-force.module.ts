@@ -6,6 +6,8 @@ import { CharacterComponent } from './components/character.component';
 import { GuardianForceComponent } from './components/guardian-force.component';
 import { CharacterSectionComponent } from './containers/character-section.component';
 import { GuardianForceSectionComponent } from './containers/guardian-force-section.component';
+import { MenuItemComponent } from './components/menu-item.component';
+import { MenuSectionComponent } from './containers/menu-section.component';
 import { reducers } from './reducers';
 
 @NgModule({
@@ -15,8 +17,14 @@ import { reducers } from './reducers';
         CharacterComponent,
         CharacterSectionComponent,
         GuardianForceComponent,
-        GuardianForceSectionComponent
+        GuardianForceSectionComponent,
+        MenuItemComponent,
+        MenuSectionComponent
     ],
-    exports: [CharacterSectionComponent, GuardianForceSectionComponent]
+    exports: [
+        CharacterSectionComponent,
+        GuardianForceSectionComponent,
+        MenuSectionComponent
+    ]
 })
 export class GuardianForceModule {}

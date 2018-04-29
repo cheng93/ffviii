@@ -134,5 +134,33 @@ body {
 
     & .ability--item {
         margin-right: 12px;
+        margin-bottom: 6px;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px 36px;
+
+    & .menu--title {
+        margin: 6px 0;
+    }
+
+    & .menu--list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 6px 0;
+    }
+
+    & .menu--item {
+        margin-right: 12px;
+        margin-bottom: 6px;
+        text-decoration: line-through;
+    }
+
+    & .menu--item-enabled {
+        text-decoration: initial;
     }
 }

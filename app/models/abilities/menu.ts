@@ -21,7 +21,7 @@ export class FamiliarAbility implements Ability {
 export class CallShopAbility implements Ability {
     readonly ap: number | null = 200;
     readonly description: string = 'Call shops from menu screen';
-    readonly name: string = 'CallShop';
+    readonly name: string = 'Call Shop';
 }
 
 export class JunkShopAbility implements Ability {
