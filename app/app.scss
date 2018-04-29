@@ -11,10 +11,15 @@ body {
 
     & .guardian-force--row {
         display: flex;
-        flex: 1 1 180px;
+        flex: 1 1 238px;
         justify-content: space-between;
         margin: 12px;
     }
+
+    & .guardian-force--actions {
+        margin: 0px 12px;
+    }
+
     & .guardian-force--ghost-0,
     .guardian-force--ghost-1,
     .guardian-force--ghost-2,
@@ -26,21 +31,21 @@ body {
         display: none;
     }
 
-    @media (min-width: 660px) {
+    @media (min-width: 834px) {
         .guardian-force--ghost-0,
         .guardian-force--ghost-1 {
             display: inherit;
         }
     }
 
-    @media (min-width: 1068px) {
+    @media (min-width: 1358px) {
         .guardian-force--ghost-2,
         .guardian-force--ghost-3 {
             display: inherit;
         }
     }
 
-    @media (min-width: 1476px) {
+    @media (min-width: 1882px) {
         .guardian-force--ghost-4 {
             display: inherit;
         }
@@ -52,30 +57,30 @@ body {
         }
     }
 
-    @media (min-width: 2496px) {
+    @media (min-width: 3192px) {
         .guardian-force--ghost-6,
         .guardian-force--ghost-7 {
             display: inherit;
         }
     }
 
-    @media (min-width: 864px) and (max-width: 1067px),
-        (min-width: 1680px) and (max-width: 1883px) {
+    @media (min-width: 1096px) and (max-width: 1357px),
+        (min-width: 2144px) and (max-width: 2405px) {
         .guardian-force--ghost-0,
         .guardian-force--ghost-1 {
             display: none;
         }
     }
 
-    @media (min-width: 1272px) and (max-width: 1475px),
-        (min-width: 1680px) and (max-width: 2087px) {
+    @media (min-width: 1620px) and (max-width: 1881px),
+        (min-width: 2144px) and (max-width: 2667px) {
         .guardian-force--ghost-2,
         .guardian-force--ghost-3 {
             display: none;
         }
     }
 
-    @media (min-width: 1680px) and (max-width: 2291px) {
+    @media (min-width: 2667px) and (max-width: 2929px) {
         .guardian-force--ghost-4 {
             display: none;
         }
@@ -90,24 +95,24 @@ body {
 
     & .character--row {
         margin: 12px;
-        flex: 1 1 180px;
+        flex: 1 1 238px;
     }
 
-    @media (min-width: 863px) {
+    @media (min-width: 1096px) {
         .character--row {
-            flex: 1 1 247px;
+            flex: 1 1 304px;
         }
     }
 
-    @media (min-width: 1132px) {
+    @media (min-width: 1360px) {
         .character--row {
-            flex: 1 1 337px;
+            flex: 1 1 413px;
         }
     }
 
-    @media (min-width: 1272px) {
+    @media (min-width: 1620px) {
         .character--row {
-            flex: 1 1 180px;
+            flex: 1 1 238px;
         }
     }
 

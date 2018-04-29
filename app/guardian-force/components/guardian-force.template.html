@@ -1,11 +1,14 @@
 <label>
     {{guardianForce.name}}
 </label>
-<select (change)="onChange($event.target.value)">
-    <option></option>
-    <option *ngFor="let character of characters" 
-        [value]="character.name"
-        [selected]="selected===character.name">
-        {{character.name}}
-    </option>
-</select>
+<div class="guardian-force--actions">
+    <button>Edit</button>
+    <select (change)="onChange($event.target.value)">
+        <option></option>
+        <option *ngFor="let character of characters" 
+            [value]="character.name"
+            [selected]="selected===character.name">
+            {{character.name}}
+        </option>
+    </select>
+</div>
