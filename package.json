@@ -11,7 +11,6 @@
         "@material/typography": "0.34.0",
         "@ngrx/store": "^5.2.0",
         "@ngrx/store-devtools": "^5.2.0",
-        "@types/node": "^10.0.0",
         "core-js": "^2.5.5",
         "rxjs": "^6.0.0",
         "rxjs-compat": "^6.0.0",
@@ -23,6 +22,7 @@
     "author": "cheng93",
     "license": "MIT",
     "devDependencies": {
+        "@types/node": "^10",
         "css-loader": "^0.28.11",
         "html-loader": "^0.5.5",
         "html-webpack-plugin": "^3.2.0",
