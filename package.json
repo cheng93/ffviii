@@ -7,6 +7,7 @@
         "@angular/http": "^5.2.10",
         "@angular/platform-browser": "^5.2.10",
         "@angular/platform-browser-dynamic": "^5.2.10",
+        "@angular/router": "^5.2.10",
         "@material/top-app-bar": "0.34.1",
         "@material/typography": "0.34.0",
         "@ngrx/store": "^5.2.0",

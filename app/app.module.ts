@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from './core/core.module';
@@ -18,7 +19,8 @@ import './app.scss';
             name: 'NgRx Book Store DevTools'
         }),
         CoreModule,
-        GuardianForceModule
+        GuardianForceModule,
+        RouterModule.forRoot([])
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
