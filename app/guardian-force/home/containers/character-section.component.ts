@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { Character, AllCharacters } from '../../models/character';
-import * as fromGuardianForce from '../reducers';
+import { Character, AllCharacters } from '../../../models/character';
+import * as fromGuardianForce from '../../core/reducers';
 
 @Component({
     selector: 'character-section',

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { MenuAbilities } from '../../models/abilities';
-import * as fromGuardianForce from '../reducers';
+import { MenuAbilities } from '../../../models/abilities';
+import * as fromGuardianForce from '../../core/reducers';
 
 @Component({
     selector: 'menu-section',

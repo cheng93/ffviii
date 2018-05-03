@@ -1,9 +1,14 @@
 import { Route } from '@angular/router';
-import { GuardianForcePage } from './pages/guardian-force.page';
+import { GuardianForceHomePage } from './home/guardian-force-home.page';
+import { GuardianForceUpdatePage } from './update/guardian-force-update.page';
 
 export const guardianForceRoutes: Route[] = [
     {
-        component: GuardianForcePage,
+        component: GuardianForceUpdatePage,
+        path: ':gf'
+    },
+    {
+        component: GuardianForceHomePage,
         path: ''
     }
 ];

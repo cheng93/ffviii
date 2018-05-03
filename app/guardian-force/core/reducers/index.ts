@@ -5,7 +5,7 @@ import {
 } from '@ngrx/store';
 import * as fromAbility from './ability';
 import * as fromSelect from './select';
-import * as fromRoot from '../../app.reducers';
+import * as fromRoot from '../../../app.reducers';
 
 export interface GuardianForceState {
     ability: fromAbility.State;

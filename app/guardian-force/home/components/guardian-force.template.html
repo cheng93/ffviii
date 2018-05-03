@@ -2,7 +2,7 @@
     {{guardianForce.name}}
 </label>
 <div class="guardian-force--actions">
-    <button>Edit</button>
+    <button [routerLink]="[guardianForce.name]">Edit</button>
     <select (change)="onChange($event.target.value)">
         <option></option>
         <option *ngFor="let character of characters" 

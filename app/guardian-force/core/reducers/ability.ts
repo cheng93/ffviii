@@ -1,4 +1,4 @@
-import { AllGuardianForces } from '../../models/guardian-forces';
+import { AllGuardianForces } from '../../../models/guardian-forces';
 
 export interface State {
     [key: string]: string[];

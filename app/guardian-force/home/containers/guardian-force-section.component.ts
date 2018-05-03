@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { GuardianForce, AllGuardianForces } from '../../models/guardian-forces';
-import { SelectAction, Upsert, Remove } from '../actions/select';
-import * as fromGuardianForce from '../reducers';
-import * as fromSelect from '../reducers/select';
+import {
+    GuardianForce,
+    AllGuardianForces
+} from '../../../models/guardian-forces';
+import { SelectAction, Upsert, Remove } from '../../core/actions/select';
+import * as fromGuardianForce from '../../core/reducers';
+import * as fromSelect from '../../core/reducers/select';
 
 @Component({
     selector: 'guardian-force-section',

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Character, AllCharacters } from '../../models/character';
-import { GuardianForce } from '../../models/guardian-forces';
+import { Character, AllCharacters } from '../../../models/character';
+import { GuardianForce } from '../../../models/guardian-forces';
 
 @Component({
     selector: 'guardian-force',

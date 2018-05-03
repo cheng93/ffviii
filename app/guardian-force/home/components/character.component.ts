@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { Character } from '../../models/character';
-import { GuardianForce } from '../../models/guardian-forces';
+import { Character } from '../../../models/character';
+import { GuardianForce } from '../../../models/guardian-forces';
 import {
     CharacterAbilities,
     CommandAbilities,
     JunctionAbilities,
     PartyAbilities
-} from '../../models/abilities';
+} from '../../../models/abilities';
 
 @Component({
     selector: 'character',
