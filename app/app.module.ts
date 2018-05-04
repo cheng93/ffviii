@@ -20,7 +20,7 @@ import './app.scss';
         }),
         CoreModule,
         GuardianForceModule,
-        RouterModule.forRoot([])
+        RouterModule.forRoot([], { useHash: true })
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent]
