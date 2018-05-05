@@ -16,10 +16,6 @@ body {
         margin: 12px;
     }
 
-    & .guardian-force--actions {
-        margin: 0px 12px;
-    }
-
     & .guardian-force--ghost-0,
     .guardian-force--ghost-1,
     .guardian-force--ghost-2,
@@ -115,32 +111,6 @@ body {
             flex: 1 1 238px;
         }
     }
-
-    & .character--name {
-        margin-bottom: 12px;
-    }
-}
-
-.ability {
-    & .ability--row {
-        margin: 12px 0;
-    }
-
-    & .ability--title {
-        margin: 6px 0;
-    }
-
-    & .ability--list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        margin: 6px 0;
-    }
-
-    & .ability--item {
-        margin-right: 12px;
-        margin-bottom: 6px;
-    }
 }
 
 .menu {
@@ -157,15 +127,5 @@ body {
         flex-wrap: wrap;
         justify-content: flex-start;
         margin: 6px 0;
-    }
-
-    & .menu--item {
-        margin-right: 12px;
-        margin-bottom: 6px;
-        text-decoration: line-through;
-    }
-
-    & .menu--item-enabled {
-        text-decoration: initial;
     }
 }

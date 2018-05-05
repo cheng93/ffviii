@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GuardianForceCoreModule } from '../core/guardian-force-core.module';
-import { AbilitiesComponent } from './components/abilities.component';
-import { CharacterComponent } from './components/character.component';
-import { GuardianForceComponent } from './components/guardian-force.component';
-import { MenuItemComponent } from './components/menu-item.component';
+import {
+    AbilitiesComponent,
+    CharacterComponent,
+    GuardianForceComponent,
+    MenuItemComponent
+} from './components';
 import { CharacterSectionComponent } from './containers/character-section.component';
 import { GuardianForceSectionComponent } from './containers/guardian-force-section.component';
 import { MenuSectionComponent } from './containers/menu-section.component';
