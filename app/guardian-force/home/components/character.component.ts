@@ -10,7 +10,7 @@ import {
 
 @Component({
     selector: 'character',
-    template: require('./character.template.html')
+    templateUrl: './character.template.html'
 })
 export class CharacterComponent {
     @Input() character!: Character;

@@ -4,7 +4,7 @@ import { GuardianForce } from '../../../models/guardian-forces';
 
 @Component({
     selector: 'guardian-force',
-    template: require('./guardian-force.template.html')
+    templateUrl: './guardian-force.template.html'
 })
 export class GuardianForceComponent {
     constructor() {}

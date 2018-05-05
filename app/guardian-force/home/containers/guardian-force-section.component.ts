@@ -11,7 +11,7 @@ import * as fromSelect from '../../core/reducers/select';
 
 @Component({
     selector: 'guardian-force-section',
-    template: require('./guardian-force-section.template.html')
+    templateUrl: './guardian-force-section.template.html'
 })
 export class GuardianForceSectionComponent {
     constructor(private store: Store<fromGuardianForce.State>) {

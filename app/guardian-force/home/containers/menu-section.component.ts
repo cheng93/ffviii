@@ -7,7 +7,7 @@ import * as fromGuardianForce from '../../core/reducers';
 
 @Component({
     selector: 'menu-section',
-    template: require('./menu-section.template.html')
+    templateUrl: './menu-section.template.html'
 })
 export class MenuSectionComponent {
     constructor(private store: Store<fromGuardianForce.State>) {

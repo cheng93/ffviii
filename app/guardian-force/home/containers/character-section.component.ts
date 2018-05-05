@@ -7,7 +7,7 @@ import * as fromGuardianForce from '../../core/reducers';
 
 @Component({
     selector: 'character-section',
-    template: require('./character-section.template.html')
+    templateUrl: './character-section.template.html'
 })
 export class CharacterSectionComponent {
     constructor(private store: Store<fromGuardianForce.State>) {

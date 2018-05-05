@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'abilities',
-    template: require('./abilities.template.html')
+    templateUrl: './abilities.template.html'
 })
 export class AbilitiesComponent {
     @Input() title!: string;
