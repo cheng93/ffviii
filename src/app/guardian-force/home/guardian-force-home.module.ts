@@ -8,9 +8,11 @@ import {
     GuardianForceComponent,
     MenuItemComponent
 } from './components';
-import { CharacterSectionComponent } from './containers/character-section.component';
-import { GuardianForceSectionComponent } from './containers/guardian-force-section.component';
-import { MenuSectionComponent } from './containers/menu-section.component';
+import {
+    CharacterSectionComponent,
+    GuardianForceSectionComponent,
+    MenuSectionComponent
+} from './containers';
 import { GuardianForceHomePage } from './guardian-force-home.page';
 
 @NgModule({

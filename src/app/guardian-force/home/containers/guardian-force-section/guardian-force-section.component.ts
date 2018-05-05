@@ -4,14 +4,15 @@ import { Observable } from 'rxjs/Observable';
 import {
     GuardianForce,
     AllGuardianForces
-} from '../../../models/guardian-forces';
-import { SelectAction, Upsert, Remove } from '../../core/actions/select';
-import * as fromGuardianForce from '../../core/reducers';
-import * as fromSelect from '../../core/reducers/select';
+} from '../../../../models/guardian-forces';
+import { SelectAction, Upsert, Remove } from '../../../core/actions/select';
+import * as fromGuardianForce from '../../../core/reducers';
+import * as fromSelect from '../../../core/reducers/select';
 
 @Component({
     selector: 'guardian-force-section',
-    templateUrl: './guardian-force-section.template.html'
+    templateUrl: './guardian-force-section.template.html',
+    styleUrls: ['./guardian-force-section.style.scss']
 })
 export class GuardianForceSectionComponent {
     constructor(private store: Store<fromGuardianForce.State>) {
