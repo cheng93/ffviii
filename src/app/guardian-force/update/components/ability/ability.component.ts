@@ -10,7 +10,7 @@ export class AbilityComponent {
 
     @Output() delete: EventEmitter<string> = new EventEmitter<string>();
 
-    onClick(event: any) {
-        this.delete.emit(event.target.value);
+    onClick() {
+        this.delete.emit(this.ability);
     }
 }

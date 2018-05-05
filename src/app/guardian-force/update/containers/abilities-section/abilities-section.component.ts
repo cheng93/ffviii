@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as fromAbility from '../../../core/reducers/ability';
 import * as fromGuardianForce from '../../../core/reducers';
+import { AbilityAction, Delete } from '../../../core/actions/ability';
 
 @Component({
     selector: 'abilities-section',
@@ -21,4 +22,13 @@ export class AbilitiesSectionComponent {
     @Input() guardianForce!: string;
 
     abilities$: Observable<string[]>;
+
+    onDelete(ability: string): void {
+        const action: AbilityAction = new Delete({
+            ability: ability,
+            gf: this.guardianForce
+        });
+
+        this.store.dispatch(action);
+    }
 }

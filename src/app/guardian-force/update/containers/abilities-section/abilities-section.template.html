@@ -1,5 +1,5 @@
-<ng-container *ngFor="let ability of (abilities$ | async); let i = index">
-    <ability class="ability--row"    
-        [ability]="ability">
-    </ability>
-</ng-container>
+<ability class="ability--row"
+    *ngFor="let ability of abilities$ | async"
+    [ability]="ability"
+    (delete)="onDelete($event)">
+</ability>
