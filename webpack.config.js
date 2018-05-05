@@ -9,9 +9,10 @@ module.exports = {
     context: __dirname,
 
     entry: {
-        polyfill: './polyfill.ts',
-        vendor: './vendor.scss',
-        app: './main.ts'
+        polyfill: './src/polyfill.ts',
+        vendor: './src/vendor.scss',
+        styles: './src/styles.scss',
+        app: './src/main.ts'
     },
 
     resolve: {
@@ -26,7 +27,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+                test: /.ts$/,
                 exclude: /node_modules/,
                 loader: '@ngtools/webpack'
             },
@@ -35,22 +36,42 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
+                exclude: [
+                    path.resolve(__dirname, './src/vendor.scss'),
+                    path.resolve(__dirname, './src/styles.scss')
+                ],
                 test: /\.(scss|css)$/,
-
+                use: [
+                    {
+                        loader: 'raw-loader'
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            includePaths: [path.resolve('./node_modules')],
+                            sourceMap: true
+                        }
+                    }
+                ]
+            },
+            {
+                include: [
+                    path.resolve(__dirname, './src/vendor.scss'),
+                    path.resolve(__dirname, './src/styles.scss')
+                ],
+                test: /\.(scss|css)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader
                     },
                     {
                         loader: 'css-loader',
-
                         options: {
                             sourceMap: true
                         }
                     },
                     {
                         loader: 'sass-loader',
-
                         options: {
                             includePaths: [path.resolve('./node_modules')],
                             sourceMap: true
@@ -62,13 +83,13 @@ module.exports = {
     },
 
     plugins: [
+        new MiniCssExtractPlugin({ filename: 'static/[name].[chunkhash].css' }),
         new AngularCompilerPlugin({
             tsConfigPath: './tsconfig.json',
-            entryModule: './app/app.module#AppModule',
-            mainPath: './main.ts'
+            entryModule: './src/app/app.module#AppModule',
+            mainPath: './src/main.ts'
         }),
         new UglifyJSPlugin(),
-        new MiniCssExtractPlugin({ filename: 'static/[name].[chunkhash].css' }),
         new HtmlWebpackPlugin({
             template: 'index.html'
         })
