@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export enum AbilityActionTypes {
-    Delete = '[Ability] Delete'
+    Delete = '[Ability] Delete',
+    Reset = '[Ability] Reset'
 }
 
 export interface DeletePayload {
@@ -15,4 +16,10 @@ export class Delete implements Action {
     constructor(public payload: DeletePayload) {}
 }
 
-export type AbilityAction = Delete;
+export class Reset implements Action {
+    readonly type = AbilityActionTypes.Reset;
+
+    constructor(public payload: string) {}
+}
+
+export type AbilityAction = Delete | Reset;

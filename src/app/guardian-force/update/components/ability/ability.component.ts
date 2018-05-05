@@ -3,7 +3,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 @Component({
     selector: 'ability',
     templateUrl: './ability.template.html',
-    styleUrls: ['./ability.template.scss']
+    styleUrls: ['./ability.style.scss']
 })
 export class AbilityComponent {
     @Input() ability!: string;

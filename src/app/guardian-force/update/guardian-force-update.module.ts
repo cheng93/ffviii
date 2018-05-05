@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { AbilityComponent } from './components';
-import { AbilitiesSectionComponent } from './containers';
+import {
+    AbilitiesSectionComponent,
+    ResetComponent
+} from './containers';
 import { GuardianForceUpdatePage } from './guardian-force-update.page';
 import { CommonModule } from '@angular/common';
 
@@ -9,6 +12,7 @@ import { CommonModule } from '@angular/common';
     declarations: [
         AbilitiesSectionComponent,
         AbilityComponent,
+        ResetComponent,
         GuardianForceUpdatePage
     ],
     exports: [GuardianForceUpdatePage]
