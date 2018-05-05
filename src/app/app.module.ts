@@ -8,7 +8,6 @@ import { CoreModule } from './core/core.module';
 import { GuardianForceModule } from './guardian-force/guardian-force.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './app.reducers';
-import './app.scss';
 
 @NgModule({
     imports: [
