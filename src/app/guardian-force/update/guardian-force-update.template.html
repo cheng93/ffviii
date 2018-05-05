@@ -1,9 +1,10 @@
 <ng-container *ngIf="guardianForce$ | async as guardianForce">
-    <div>
+    <div class="name">
         {{guardianForce}}
     </div>
     <section>
-        <abilities-section [guardianForce]="guardianForce">
+        <abilities-section class="abilities"
+            [guardianForce]="guardianForce">
         </abilities-section>
     </section>
 </ng-container>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { AbilityComponent } from './components/ability.component';
-import { AbilitiesSectionComponent } from './containers/abilities-section.component';
+import { AbilityComponent } from './components';
+import { AbilitiesSectionComponent } from './containers';
 import { GuardianForceUpdatePage } from './guardian-force-update.page';
 import { CommonModule } from '@angular/common';
 

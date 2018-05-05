@@ -1,0 +1,16 @@
+.name {
+    margin: 36px 36px 24px;
+}
+
+.abilities {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 24px 36px;
+
+    @media (min-width: 422px) {
+        max-height: 528px;
+        max-width: 422px;
+    }
+}
