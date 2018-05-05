@@ -22,6 +22,6 @@ export function reducer(
             };
 
         default:
-            return initialState;
+            return state;
     }
 }
