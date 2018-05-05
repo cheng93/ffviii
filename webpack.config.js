@@ -3,6 +3,7 @@ const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 
 module.exports = {
     context: __dirname,
@@ -25,9 +26,9 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader'
+                loader: '@ngtools/webpack'
             },
             {
                 test: /\.html$/,
@@ -61,6 +62,11 @@ module.exports = {
     },
 
     plugins: [
+        new AngularCompilerPlugin({
+            tsConfigPath: './tsconfig.json',
+            entryModule: './app/app.module#AppModule',
+            mainPath: './main.ts'
+        }),
         new UglifyJSPlugin(),
         new MiniCssExtractPlugin({ filename: 'static/[name].[chunkhash].css' }),
         new HtmlWebpackPlugin({
