@@ -27,7 +27,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /.ts$/,
+                test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 exclude: /node_modules/,
                 loader: '@ngtools/webpack'
             },
@@ -98,19 +98,32 @@ module.exports = {
     mode: 'production',
 
     optimization: {
-        splitChunks: {
-            chunks: 'async',
-            minSize: 30000,
-            minChunks: 1,
-            name: false,
+        runtimeChunk: 'single'
+        // splitChunks: {
+        //     minSize: 30000,
+        //     minChunks: 1,
 
-            cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10
-                }
-            }
-        }
+        //     cacheGroups: {
+        //         polyfill: {
+        //             test: 'polyfill',
+        //             name: 'polyfill',
+        //             chunks: 'all',
+        //             priority: 20
+        //         },
+        //         vendor: {
+        //             test: /node_modules/,
+        //             chunks: 'all',
+        //             name: 'vendor',
+        //             priority: 10,
+        //             enforce: true
+        //         },
+        //         default: {
+        //             minChunks: 2,
+        //             chunks: 'all',
+        //             priority: 0
+        //         }
+        //     }
+        // }
     },
 
     devServer: {
