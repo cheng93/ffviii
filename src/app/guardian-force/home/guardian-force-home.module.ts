@@ -10,8 +10,10 @@ import {
 } from './components';
 import {
     CharacterSectionComponent,
+    CharacterSectionService,
     GuardianForceSectionComponent,
-    MenuSectionComponent
+    MenuSectionComponent,
+    MenuSectionService
 } from './containers';
 import { GuardianForceHomePage } from './guardian-force-home.page';
 
@@ -27,6 +29,7 @@ import { GuardianForceHomePage } from './guardian-force-home.page';
         MenuItemComponent,
         MenuSectionComponent
     ],
+    providers: [CharacterSectionService, MenuSectionService],
     exports: [GuardianForceHomePage]
 })
 export class GuardianForceHomeModule {}

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
 import { Character, AllCharacters } from '../../../../models/character';
-import * as fromGuardianForce from '../../../core/reducers';
+import { CharacterSectionService } from './character-section.service';
 
 @Component({
     selector: 'character-section',
@@ -11,29 +10,11 @@ import * as fromGuardianForce from '../../../core/reducers';
     styleUrls: ['./character-section.style.scss']
 })
 export class CharacterSectionComponent {
-    constructor(private store: Store<fromGuardianForce.State>) {
-        this.abilities$ = store.pipe(
-            select(fromGuardianForce.getGuardianForceState),
-            map((state: fromGuardianForce.GuardianForceState) =>
-                Object.keys(state.select).reduce(
-                    (acc, key) => ({
-                        ...acc,
-                        [state.select[key]]: Array.from(
-                            new Set([
-                                ...(acc[state.select[key]] || []),
-                                ...state.ability[key]
-                            ])
-                        )
-                    }),
-                    <{
-                        [character: string]: string[];
-                    }>{}
-                )
-            )
-        );
-    }
+    constructor(private characterSectionService: CharacterSectionService) {}
 
-    abilities$: Observable<{ [key: string]: string[] }>;
+    getAbilities$(name: string): Observable<string[]> {
+        return this.characterSectionService.getCharacterAbilities(name);
+    }
 
     characters: Character[] = Object.values(AllCharacters);
 }
