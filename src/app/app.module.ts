@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreModule } from './core/core.module';
@@ -17,6 +18,7 @@ import { reducers, metaReducers } from './app.reducers';
         StoreDevtoolsModule.instrument({
             name: 'NgRx Book Store DevTools'
         }),
+        EffectsModule.forRoot([]),
         CoreModule,
         GuardianForceModule,
         RouterModule.forRoot([], { useHash: true })

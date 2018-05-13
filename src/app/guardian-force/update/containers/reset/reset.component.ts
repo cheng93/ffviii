@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Reset } from '../../../core/actions/ability';
+import { ResetAbilities } from '../../../core/actions/ability';
 import * as fromGuardianForce from '../../../core/reducers';
 
 @Component({
@@ -14,7 +14,7 @@ export class ResetComponent {
     @Input() guardianForce!: string;
 
     onClick(): void {
-        const action: Reset = new Reset(this.guardianForce);
+        const action: ResetAbilities = new ResetAbilities(this.guardianForce);
         this.store.dispatch(action);
     }
 }

@@ -1,10 +1,15 @@
-<ability-type-filter
-    [options]="abilityTypes$ | async"
-    [selected]="selectedAbilityType$ | async"
-    (selectedChange)="onAbilityTypeSelectedChange($event)">
-</ability-type-filter>
-<ability-filter
-    [options]="abilities$ | async"
-    [selected]="selectedAbility$ | async"
-    (selectedChange)="onAbilitySelectedChange($event)">
-</ability-filter>
+<ng-container *ngIf="(selectedAbilitiesCount$ | async) < 22">
+    <ability-type-filter
+        [options]="abilityTypes$ | async"
+        [selected]="selectedAbilityType$ | async"
+        (selectedChange)="onAbilityTypeSelectedChange($event)">
+    </ability-type-filter>
+    <ng-container *ngIf="abilities$ | async as abilities">
+        <ability-filter *ngIf="abilities && abilities.length > 0"
+            [options]="abilities"
+            [selected]="selectedAbility$ | async"
+            (add)="onAdd($event)"
+            (selectedChange)="onAbilitySelectedChange($event)">
+        </ability-filter>
+    </ng-container>
+</ng-container>

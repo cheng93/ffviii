@@ -11,11 +11,11 @@ export function reducer(
     action: SelectAction
 ): State {
     switch (action.type) {
-        case SelectActionTypes.Remove:
+        case SelectActionTypes.RemoveGuardianForce:
             let { [action.payload]: omit, ...res } = state;
             return res;
 
-        case SelectActionTypes.Upsert:
+        case SelectActionTypes.UpsertGuardianForce:
             return {
                 ...state,
                 [action.payload.gf]: action.payload.character

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, withLatestFrom, switchMap } from 'rxjs/operators';
 import {
     AbilityType,
@@ -16,6 +16,8 @@ import {
     ResetFilters
 } from '../../../core/actions/abilityFilter';
 import { AddAbilityService } from './add-ability.service';
+import { AddAbility } from '../../../core/actions/ability';
+import { Input } from '@angular/core';
 
 @Component({
     selector: 'add-ability',
@@ -37,19 +39,23 @@ export class AddAbilityComponent implements OnInit {
         );
     }
 
+    @Input() guardianForce!: string;
+
     ngOnInit(): void {
         this.store.dispatch(new ResetFilters());
         this.abilityTypes$ = this.route.paramMap.pipe(
             switchMap((params: ParamMap) => {
-                const gf = params.get('gf') as string;
-                return this.addAbilityService.getAbilityTypes(gf).pipe(
-                    map(x =>
-                        x.map(y => ({
-                            value: y,
-                            display: AbilityType[y as keyof typeof AbilityType]
-                        }))
-                    )
-                );
+                return this.addAbilityService
+                    .getAbilityTypes(this.guardianForce)
+                    .pipe(
+                        map(x =>
+                            x.map(y => ({
+                                value: y,
+                                display:
+                                    AbilityType[y as keyof typeof AbilityType]
+                            }))
+                        )
+                    );
             })
         );
         this.abilities$ = this.selectedAbilityType$.pipe(
@@ -58,10 +64,7 @@ export class AddAbilityComponent implements OnInit {
                 ([abilityType, params]) =>
                     abilityType
                         ? this.addAbilityService
-                              .getAbilities(
-                                  params.get('gf') as string,
-                                  abilityType
-                              )
+                              .getAbilities(this.guardianForce, abilityType)
                               .pipe(
                                   map(x =>
                                       x.map(ability => ({
@@ -70,17 +73,31 @@ export class AddAbilityComponent implements OnInit {
                                       }))
                                   )
                               )
-                        : []
+                        : of([])
             )
+        );
+
+        this.selectedAbilitiesCount$ = this.store.pipe(
+            select(fromGuardianForce.getGuardianForceAbilityState),
+            map(state => state[this.guardianForce].length)
         );
     }
 
-    onAbilitySelectedChange(abilityType: AbilityType | null) {
+    onAbilitySelectedChange(abilityType: AbilityType | null): void {
         this.store.dispatch(new UpdateSelectedAbility(abilityType));
     }
 
-    onAbilityTypeSelectedChange(abilityType: AbilityType | null) {
+    onAbilityTypeSelectedChange(abilityType: AbilityType | null): void {
         this.store.dispatch(new UpdateSelectedAbilityType(abilityType));
+    }
+
+    onAdd(ability: string): void {
+        this.store.dispatch(
+            new AddAbility({
+                ability: ability,
+                gf: this.guardianForce
+            })
+        );
     }
 
     abilities$!: Observable<AbilityFilterOption[]>;
@@ -90,4 +107,6 @@ export class AddAbilityComponent implements OnInit {
     selectedAbility$: Observable<string | null>;
 
     selectedAbilityType$: Observable<string | null>;
+
+    selectedAbilitiesCount$!: Observable<number>;
 }

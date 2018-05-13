@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as fromAbility from '../../../core/reducers/ability';
 import * as fromGuardianForce from '../../../core/reducers';
-import { AbilityAction, Delete } from '../../../core/actions/ability';
+import { AbilityAction, DeleteAbility } from '../../../core/actions/ability';
 
 @Component({
     selector: 'abilities-section',
@@ -24,7 +24,7 @@ export class AbilitiesSectionComponent {
     abilities$: Observable<string[]>;
 
     onDelete(ability: string): void {
-        const action: AbilityAction = new Delete({
+        const action: AbilityAction = new DeleteAbility({
             ability: ability,
             gf: this.guardianForce
         });

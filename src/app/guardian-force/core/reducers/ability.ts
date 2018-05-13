@@ -18,14 +18,22 @@ export function reducer(
     action: AbilityAction
 ): State {
     switch (action.type) {
-        case AbilityActionTypes.Delete:
+        case AbilityActionTypes.AddAbility:
+            return {
+                ...state,
+                [action.payload.gf]: [
+                    ...state[action.payload.gf],
+                    action.payload.ability
+                ]
+            };
+        case AbilityActionTypes.DeleteAbility:
             return {
                 ...state,
                 [action.payload.gf]: state[action.payload.gf].filter(
                     x => x !== action.payload.ability
                 )
             };
-        case AbilityActionTypes.Reset:
+        case AbilityActionTypes.ResetAbilities:
             return {
                 ...state,
                 [action.payload]: initialState[action.payload]

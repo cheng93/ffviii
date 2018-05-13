@@ -1,25 +1,32 @@
 import { Action } from '@ngrx/store';
 
 export enum AbilityActionTypes {
-    Delete = '[Ability] Delete',
-    Reset = '[Ability] Reset'
+    AddAbility = '[Ability] Add Ability',
+    DeleteAbility = '[Ability] Delete Ability',
+    ResetAbilities = '[Ability] Reset Abilities'
 }
 
-export interface DeletePayload {
+export interface AbilityPayload {
     ability: string;
     gf: string;
 }
 
-export class Delete implements Action {
-    readonly type = AbilityActionTypes.Delete;
+export class AddAbility implements Action {
+    readonly type = AbilityActionTypes.AddAbility;
 
-    constructor(public payload: DeletePayload) {}
+    constructor(public payload: AbilityPayload) {}
 }
 
-export class Reset implements Action {
-    readonly type = AbilityActionTypes.Reset;
+export class DeleteAbility implements Action {
+    readonly type = AbilityActionTypes.DeleteAbility;
+
+    constructor(public payload: AbilityPayload) {}
+}
+
+export class ResetAbilities implements Action {
+    readonly type = AbilityActionTypes.ResetAbilities;
 
     constructor(public payload: string) {}
 }
 
-export type AbilityAction = Delete | Reset;
+export type AbilityAction = AddAbility | DeleteAbility | ResetAbilities;

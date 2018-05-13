@@ -5,7 +5,11 @@ import {
     GuardianForce,
     AllGuardianForces
 } from '../../../../models/guardian-forces';
-import { SelectAction, Upsert, Remove } from '../../../core/actions/select';
+import {
+    SelectAction,
+    UpsertGuardianForce,
+    RemoveGuardianForce
+} from '../../../core/actions/select';
 import * as fromGuardianForce from '../../../core/reducers';
 import * as fromSelect from '../../../core/reducers/select';
 
@@ -27,8 +31,8 @@ export class GuardianForceSectionComponent {
 
     onChange(character: string, gf: string) {
         const action: SelectAction = character
-            ? new Upsert({ character: character, gf: gf })
-            : new Remove(gf);
+            ? new UpsertGuardianForce({ character: character, gf: gf })
+            : new RemoveGuardianForce(gf);
 
         this.store.dispatch(action);
     }

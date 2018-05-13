@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
 export enum SelectActionTypes {
-    Remove = '[Select] Remove',
-    Upsert = '[Select] Upsert'
+    RemoveGuardianForce = '[Select] Remove Guardian Force',
+    UpsertGuardianForce = '[Select] Upsert Guardian Force'
 }
 
 export interface UpsertPayload {
@@ -10,16 +10,16 @@ export interface UpsertPayload {
     character: string;
 }
 
-export class Remove implements Action {
-    readonly type = SelectActionTypes.Remove;
+export class RemoveGuardianForce implements Action {
+    readonly type = SelectActionTypes.RemoveGuardianForce;
 
     constructor(public payload: string) {}
 }
 
-export class Upsert implements Action {
-    readonly type = SelectActionTypes.Upsert;
+export class UpsertGuardianForce implements Action {
+    readonly type = SelectActionTypes.UpsertGuardianForce;
 
     constructor(public payload: UpsertPayload) {}
 }
 
-export type SelectAction = Remove | Upsert;
+export type SelectAction = RemoveGuardianForce | UpsertGuardianForce;

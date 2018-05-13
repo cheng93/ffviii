@@ -17,7 +17,13 @@ export class AbilityFilterComponent {
 
     @Output() selectedChange: EventEmitter<string> = new EventEmitter<string>();
 
-    onChange(value: string) {
+    @Output() add: EventEmitter<string> = new EventEmitter<string>();
+
+    onChange(value: string): void {
         this.selectedChange.emit(value);
+    }
+
+    onClick(): void {
+        this.add.emit(this.selected);
     }
 }
