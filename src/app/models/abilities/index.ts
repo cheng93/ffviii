@@ -26,10 +26,11 @@ export * from './party';
 
 export const AllAbilities = new _AllAbilities();
 
-export type AbilityType =
-    | 'Character'
-    | 'Command'
-    | 'Guardian Force'
-    | 'Junction'
-    | 'Menu'
-    | 'Party';
+export enum AbilityType {
+    Character = 'Character',
+    Command = 'Command',
+    GuardianForce = 'Guardian Force',
+    Junction = 'Junction',
+    Menu = 'Menu',
+    Party = 'Party'
+}
