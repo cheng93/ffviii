@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map, withLatestFrom } from 'rxjs/operators';
+import { map, withLatestFrom, switchMap } from 'rxjs/operators';
 import {
     AbilityType,
     AllAbilities,
@@ -40,30 +40,36 @@ export class AddAbilityComponent implements OnInit {
     ngOnInit(): void {
         this.store.dispatch(new ResetFilters());
         this.abilityTypes$ = this.route.paramMap.pipe(
-            map((params: ParamMap) => {
+            switchMap((params: ParamMap) => {
                 const gf = params.get('gf') as string;
-                return this.addAbilityService
-                    .getAbilityTypes(gf)
-                    .map((x: string) => ({
-                        value: x,
-                        display: AbilityType[x as keyof typeof AbilityType]
-                    }));
+                return this.addAbilityService.getAbilityTypes(gf).pipe(
+                    map(x =>
+                        x.map(y => ({
+                            value: y,
+                            display: AbilityType[y as keyof typeof AbilityType]
+                        }))
+                    )
+                );
             })
         );
         this.abilities$ = this.selectedAbilityType$.pipe(
-            withLatestFrom(
-                this.route.paramMap,
-                (abilityType: string | null, params: ParamMap) =>
+            withLatestFrom(this.route.paramMap),
+            switchMap(
+                ([abilityType, params]) =>
                     abilityType
                         ? this.addAbilityService
                               .getAbilities(
                                   params.get('gf') as string,
                                   abilityType
                               )
-                              .map((ability: string) => ({
-                                  value: ability,
-                                  display: ability
-                              }))
+                              .pipe(
+                                  map(x =>
+                                      x.map(ability => ({
+                                          value: ability,
+                                          display: ability
+                                      }))
+                                  )
+                              )
                         : []
             )
         );
