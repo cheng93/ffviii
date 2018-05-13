@@ -25,3 +25,11 @@ export * from './menu';
 export * from './party';
 
 export const AllAbilities = new _AllAbilities();
+
+export type AbilityType =
+    | 'Character'
+    | 'Command'
+    | 'Guardian Force'
+    | 'Junction'
+    | 'Menu'
+    | 'Party';
