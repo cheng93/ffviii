@@ -38,6 +38,16 @@ export const getGuardianForceAbilityFilterState = createSelector(
     state => state.abilityFilter
 );
 
+export const getSelectedAbility = createSelector(
+    getGuardianForceAbilityFilterState,
+    fromAbilityFilter.getSelectedAbility
+);
+
+export const getSelectedAbiityType = createSelector(
+    getGuardianForceAbilityFilterState,
+    fromAbilityFilter.getSelectedAbilityType
+);
+
 export const getGuardianForceSelectState = createSelector(
     getGuardianForceState,
     state => state.select

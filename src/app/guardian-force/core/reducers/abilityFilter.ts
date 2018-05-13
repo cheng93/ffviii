@@ -5,7 +5,7 @@ import {
 } from '../actions/abilityFilter';
 
 export interface State {
-    selectedAbilityType: AbilityType | null;
+    selectedAbilityType: string | null;
     selectedAbility: string | null;
 }
 
@@ -19,6 +19,13 @@ export function reducer(
     action: AbilityFilterAction
 ): State {
     switch (action.type) {
+        case AbilityFilterActionTypes.ResetFilters:
+            return initialState;
+        case AbilityFilterActionTypes.UpdateSelectedAbility:
+            return {
+                ...state,
+                selectedAbility: action.payload
+            };
         case AbilityFilterActionTypes.UpdateSelectedAbilityType:
             return {
                 ...state,

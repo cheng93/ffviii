@@ -7,7 +7,7 @@ import { MenuAbilities } from './menu';
 import { PartyAbilities } from './party';
 
 class _AllAbilities implements AbilityMap {
-    [key: string]: AbilityMap | Ability;
+    [key: string]: AbilityMap;
     readonly Character = CharacterAbilities;
     readonly Command = CommandAbilities;
     readonly GuardianForce = GuardianForceAbilities;

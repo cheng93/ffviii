@@ -1,0 +1,8 @@
+<select (change)="onChange($event.target.value)">
+    <option></option>
+    <option *ngFor="let option of options"
+        [value]="option.value"
+        [selected]="selected == option.value">
+        {{option.display}}
+    </option>
+</select>

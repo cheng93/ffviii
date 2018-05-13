@@ -1,0 +1,10 @@
+<ability-type-filter
+    [options]="abilityTypes$ | async"
+    [selected]="selectedAbilityType$ | async"
+    (selectedChange)="onAbilityTypeSelectedChange($event)">
+</ability-type-filter>
+<ability-filter
+    [options]="abilities$ | async"
+    [selected]="selectedAbility$ | async"
+    (selectedChange)="onAbilitySelectedChange($event)">
+</ability-filter>
