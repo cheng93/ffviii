@@ -26,7 +26,10 @@ export function reducer(
                 )
             };
         case AbilityActionTypes.Reset:
-            return initialState;
+            return {
+                ...state,
+                [action.payload]: initialState[action.payload]
+            };
         default:
             return state;
     }
