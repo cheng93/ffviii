@@ -26,4 +26,8 @@ export class AbilityFilterComponent {
     onClick(): void {
         this.add.emit(this.selected);
     }
+
+    get disabledSelect(): boolean {
+        return !this.options || this.options.length === 0;
+    }
 }
