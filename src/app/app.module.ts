@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { CoreModule } from './core/core.module';
+import { ToolbarModule } from './toolbar/toolbar.module';
 import { GuardianForceModule } from './guardian-force/guardian-force.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './app.reducers';
@@ -19,7 +19,7 @@ import { reducers, metaReducers } from './app.reducers';
             name: 'NgRx Book Store DevTools'
         }),
         EffectsModule.forRoot([]),
-        CoreModule,
+        ToolbarModule,
         GuardianForceModule,
         RouterModule.forRoot([], { useHash: true })
     ],
