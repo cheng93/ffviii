@@ -1,0 +1,72 @@
+.guardian-force--row {
+    display: flex;
+    flex: 1 1 238px;
+    justify-content: space-between;
+    margin: 12px;
+}
+
+.guardian-force--ghost-0,
+.guardian-force--ghost-1,
+.guardian-force--ghost-2,
+.guardian-force--ghost-3,
+.guardian-force--ghost-4,
+.guardian-force--ghost-5,
+.guardian-force--ghost-6,
+.guardian-force--ghost-7 {
+    display: none;
+}
+
+@media (min-width: 834px) {
+    .guardian-force--ghost-0,
+    .guardian-force--ghost-1 {
+        display: inherit;
+    }
+}
+
+@media (min-width: 1358px) {
+    .guardian-force--ghost-2,
+    .guardian-force--ghost-3 {
+        display: inherit;
+    }
+}
+
+@media (min-width: 1882px) {
+    .guardian-force--ghost-4 {
+        display: inherit;
+    }
+}
+
+@media (min-width: 2292px) {
+    .guardian-force--ghost-5 {
+        display: inherit;
+    }
+}
+
+@media (min-width: 3192px) {
+    .guardian-force--ghost-6,
+    .guardian-force--ghost-7 {
+        display: inherit;
+    }
+}
+
+@media (min-width: 1096px) and (max-width: 1357px),
+    (min-width: 2144px) and (max-width: 2405px) {
+    .guardian-force--ghost-0,
+    .guardian-force--ghost-1 {
+        display: none;
+    }
+}
+
+@media (min-width: 1620px) and (max-width: 1881px),
+    (min-width: 2144px) and (max-width: 2667px) {
+    .guardian-force--ghost-2,
+    .guardian-force--ghost-3 {
+        display: none;
+    }
+}
+
+@media (min-width: 2667px) and (max-width: 2929px) {
+    .guardian-force--ghost-4 {
+        display: none;
+    }
+}

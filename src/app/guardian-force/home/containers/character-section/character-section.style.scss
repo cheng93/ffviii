@@ -1,0 +1,22 @@
+.character--row {
+    margin: 12px;
+    flex: 1 1 238px;
+}
+
+@media (min-width: 1096px) {
+    .character--row {
+        flex: 1 1 304px;
+    }
+}
+
+@media (min-width: 1360px) {
+    .character--row {
+        flex: 1 1 413px;
+    }
+}
+
+@media (min-width: 1620px) {
+    .character--row {
+        flex: 1 1 238px;
+    }
+}

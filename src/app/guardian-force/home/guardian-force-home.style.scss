@@ -1,0 +1,19 @@
+.guardian-force {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px;
+}
+
+.character {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 24px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 24px 36px;
+}

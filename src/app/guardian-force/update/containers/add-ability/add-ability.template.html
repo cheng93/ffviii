@@ -1,0 +1,15 @@
+<div *ngIf="(selectedAbilitiesCount$ | async) < 22">
+    <ability-type-filter
+        class="ability-type-filter"
+        [options]="abilityTypes$ | async"
+        [selected]="selectedAbilityType$ | async"
+        (selectedChange)="onAbilityTypeSelectedChange($event)">
+    </ability-type-filter>
+    <ability-filter
+        class="ability-filter"
+        [options]="abilities$ | async "
+        [selected]="selectedAbility$ | async"
+        (add)="onAdd($event)"
+        (selectedChange)="onAbilitySelectedChange($event)">
+    </ability-filter>
+</div>

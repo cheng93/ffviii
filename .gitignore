@@ -4,6 +4,7 @@
 ## Angular ##
 # compiled output
 /dist
+/.dist
 /tmp
 /app/**/*.js
 /app/**/*.js.map
@@ -33,3 +34,5 @@ testem.log
 
 
 # End of https://www.gitignore.io/api/angular
+
+.vscode
