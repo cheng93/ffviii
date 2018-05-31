@@ -22,7 +22,7 @@ const config = function(env, argv) {
 
         output: {
             filename: 'static/[name].[chunkhash].js',
-            path: path.resolve(__dirname, '.dist')
+            path: path.resolve(__dirname, 'dist')
         },
 
         module: {
@@ -127,7 +127,6 @@ const config = function(env, argv) {
         },
 
         devServer: {
-            contentBase: './.dist',
             port: 9000
         }
     };
