@@ -1,19 +1,21 @@
+@import './variables';
+
 .guardian-force {
     display: flex;
     flex-wrap: wrap;
-    margin: 24px;
+    margin: 24px $container-margin-x;
 }
 
 .character {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 24px;
+    margin: 24px $container-margin-x;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 24px 36px;
+    margin: 24px $container-margin-x;
 }
