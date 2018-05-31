@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MenuAbilities } from '../../../../models/abilities';
 import { MenuSectionService } from './menu-section.service';
 
