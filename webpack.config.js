@@ -119,32 +119,11 @@ const config = function(env, argv) {
         mode: 'production',
 
         optimization: {
-            runtimeChunk: 'single'
-            // splitChunks: {
-            //     minSize: 30000,
-            //     minChunks: 1,
-
-            //     cacheGroups: {
-            //         polyfill: {
-            //             test: 'polyfill',
-            //             name: 'polyfill',
-            //             chunks: 'all',
-            //             priority: 20
-            //         },
-            //         vendor: {
-            //             test: /node_modules/,
-            //             chunks: 'all',
-            //             name: 'vendor',
-            //             priority: 10,
-            //             enforce: true
-            //         },
-            //         default: {
-            //             minChunks: 2,
-            //             chunks: 'all',
-            //             priority: 0
-            //         }
-            //     }
-            // }
+            splitChunks: {
+                minSize: 30000,
+                minChunks: 1,
+                chunks: 'initial'
+            }
         },
 
         devServer: {
