@@ -5,6 +5,7 @@ import {
     MetaReducer,
     createFeatureSelector
 } from '@ngrx/store';
+import { environment } from '../environment/environment';
 
 export interface State {}
 
@@ -21,4 +22,6 @@ export function logger(
     };
 }
 
-export const metaReducers: MetaReducer<State>[] = [logger];
+export const metaReducers: MetaReducer<State>[] = environment.isDevelopment
+    ? [logger]
+    : [];
