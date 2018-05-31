@@ -1,0 +1,11 @@
+.ability--name {
+    flex: 0 0 117px;
+}
+
+.ability--clear {
+    flex: 0 0 24px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

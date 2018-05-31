@@ -1,0 +1,7 @@
+<div class="menu--title">Menu</div>
+<div class="menu--list">
+    <menu-item *ngFor="let ability of menuAbilities"
+        [name]="ability"
+        [enabled]="(abilities$ | async).includes(ability)">
+    </menu-item>
+</div>

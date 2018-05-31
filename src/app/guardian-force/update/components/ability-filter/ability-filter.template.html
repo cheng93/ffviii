@@ -1,0 +1,13 @@
+<select (change)="onChange($event.target.value)"
+    [disabled]="disabledSelect">
+    <option></option>
+    <option *ngFor="let option of options"
+        [value]="option.value"
+        [selected]="selected == option.value">
+        {{option.display}}
+    </option>
+</select>
+<button [disabled]="!selected"
+    (click)="onClick()">
+    Add
+</button>

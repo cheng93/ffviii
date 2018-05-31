@@ -1,0 +1,74 @@
+@import '../../variables';
+
+.guardian-force--row {
+    display: flex;
+    flex: 1 1 $container-basis;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.guardian-force--ghost-0,
+.guardian-force--ghost-1,
+.guardian-force--ghost-2,
+.guardian-force--ghost-3,
+.guardian-force--ghost-4,
+.guardian-force--ghost-5,
+.guardian-force--ghost-6,
+.guardian-force--ghost-7 {
+    display: none;
+}
+
+@media (min-width: ($container-basis * 3) + ($container-margin-x * 2)) {
+    .guardian-force--ghost-0,
+    .guardian-force--ghost-1 {
+        display: inherit;
+    }
+}
+
+@media (min-width: ($container-basis * 5) + ($container-margin-x * 2)) {
+    .guardian-force--ghost-2,
+    .guardian-force--ghost-3 {
+        display: inherit;
+    }
+}
+
+@media (min-width: ($container-basis * 7) + ($container-margin-x * 2)) {
+    .guardian-force--ghost-4 {
+        display: inherit;
+    }
+}
+
+@media (min-width: ($container-basis * 11) + ($container-margin-x * 2)) {
+    .guardian-force--ghost-5 {
+        display: inherit;
+    }
+}
+
+@media (min-width: ($container-basis * 12) + ($container-margin-x * 2)) {
+    .guardian-force--ghost-6,
+    .guardian-force--ghost-7 {
+        display: inherit;
+    }
+}
+
+@media (min-width: ($container-basis * 4) + ($container-margin-x * 2)) and (max-width: ($container-basis * 5) + ($container-margin-x * 2) - 1),
+    (min-width: ($container-basis * 8) + ($container-margin-x * 2)) and (max-width: ($container-basis * 9) + ($container-margin-x * 2) -1) {
+    .guardian-force--ghost-0,
+    .guardian-force--ghost-1 {
+        display: none;
+    }
+}
+
+@media (min-width: ($container-basis * 6) + ($container-margin-x * 2)) and (max-width: ($container-basis * 7) + ($container-margin-x * 2) -1),
+    (min-width: ($container-basis * 8) + ($container-margin-x * 2)) and (max-width: ($container-basis * 10) + ($container-margin-x * 2) -1) {
+    .guardian-force--ghost-2,
+    .guardian-force--ghost-3 {
+        display: none;
+    }
+}
+
+@media (min-width: ($container-basis * 8) + ($container-margin-x * 2)) and (max-width: ($container-basis * 11) + ($container-margin-x * 2) -1) {
+    .guardian-force--ghost-4 {
+        display: none;
+    }
+}

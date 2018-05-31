@@ -1,0 +1,24 @@
+@import '../../variables';
+
+.character--row {
+    margin: 12px 0;
+    flex: 1 1 $container-basis;
+}
+
+@media (min-width: ($container-basis * 4) + ($container-margin-x * 2)) {
+    .character--row {
+        flex: 1 1 ($container-basis * 4/3);
+    }
+}
+
+@media (min-width: ($container-basis * 4) + ($container-basis * 4/3) + ($container-margin-x * 2)) {
+    .character--row {
+        flex: 1 1 ((($container-basis * 4) + ($container-basis * 4/3)) / 3);
+    }
+}
+
+@media (min-width: ($container-basis * 6) + ($container-margin-x * 2)) {
+    .character--row {
+        flex: 1 1 $container-basis;
+    }
+}

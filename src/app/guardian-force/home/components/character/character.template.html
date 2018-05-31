@@ -1,0 +1,6 @@
+<div class="character--name">{{character.name}}</div>
+<abilities *ngFor="let ability of transformed"
+    [title]="ability.title"
+    [abilities]="abilities"
+    [allAbilities]="ability.allAbilities">
+</abilities>
